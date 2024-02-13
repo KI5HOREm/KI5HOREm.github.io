@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="website icon" href="360_F_39359503_OwuPkSOhBPDVZvEBLVo3CzTEn4qjXmqm-removebg-preview.png">
+    <script>
+        var dict={'kalluvava':'achubaby'};
+        setInterval(function(){
+            var user=document.getElementById("user");
+            var pass=document.getElementById("pass");
+            if(dict.hasOwnProperty(user.value))
+            {
+                user.style.boxShadow="0px 1px 10px 0px rgb(0, 255,0)";
+                user.style.transition="box-shadow 0.2s ease";
+                
+            }
+            else{
+                user.style.boxShadow="0px 1px 20px 0px rgb(225, 53, 53)";
+                user.style.transition="box-shadow 0.2s ease";
+                
+            }
+            if(dict[user.value]==pass.value)
+            {
+                pass.style.boxShadow="0px 1px 20px 0px rgb(0, 255, 0)";
+                pass.style.transition="box-shadow 0.2s ease";
+            }
+            else{
+                pass.style.boxShadow="0px 4px 20px 0px rgb(225, 53, 53)";
+                pass.style.transition="box-shadow 0.2s ease";
+            }
+            if(dict.hasOwnProperty(user.value) & dict[user.value]==pass.value )
+            {
+                 var box=document.getElementById("mydiv2");
+                box.style.boxShadow="0 4px 10px 0 rgb(226, 71, 103)";
+                box.style.transition="box-shadow 0.4s ease";
+                var imag=document.getElementById("imag");
+                imag.style.display="block";
+            }
+            
+        });
+        function signup()
+        {
+            var a=document.getElementById("mydiv");
+            var b=document.getElementById("mydiv2");
+            a.style.display="block";
+            a.classList.add("slide");
+            b.style.display="none";
+        }
+        function login(){
+            var username=document.getElementById("user").value;
+            var password=document.getElementById("pass").value;
+            if(dict[username]==null || dict[username]!=password)
+            {
+                alert("Invalid username or password!");   
+            }
+            else{
+                alert("Login Sucessful")
+                setTimeout(function(){
+                    window.location.href="kallu2.html";
+                },1500);
+            }
+        }
+            function toggle(){
+                var x=document.getElementById("pass")
+                if(x.type==="password")
+                {
+                    x.type="text";
+                }
+                else{
+                    x.type="password";
+                }
+            }    
+    </script>
+    <style>
+        body{
+            background-image: url("gradient-valentine-s-day-background_23-2149242406.avif");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .slide{
+            transform: translateX(-30%);
+        }
+        .login-div:hover {
+            box-shadow: 0 10px 20px 0 rgb(227, 0, 0);
+        }
+        .login-div{
+            background-color: rgba(240, 248, 255, 0.514);
+            position: fixed;
+            top: 45%;
+            left: 50%;
+            align-content: center;
+            transform: translate(-100%, -50%);
+            box-shadow: 0px 4px 20px 0px rgb(225, 53, 53);
+            width: 325px;
+            border-radius: 15px;
+            margin: 30px 0px 0px 0px;
+            height: 400px;
+        }
+        .data{
+            margin-left: 20px;
+        }
+        .username{
+            margin-top: 40%;
+            transform: translatex(4%);
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .password{
+            margin-top: 10%;
+            transform: translatex(4%);
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="text"],input[type="password"]{
+            height: 32px;
+            width: 83%;
+            border-radius: 16px;
+            border: 0px;
+            text-align: center;
+            background-color:  rgba(255, 255, 255, 0.635);
+            font-size: 15px;
+            box-shadow: 0px 2px 10px -1px rgb(225, 53, 53);
+            transition: box-shadow 0.5s ease;
+        }
+        .user{
+            height: 32px;
+            width: 83%;
+            border-radius: 16px;
+            border: 0px;
+            text-align: center;
+            background-color:  rgba(255, 255, 255, 0.635);
+            font-size: 15px;
+            box-shadow: 0px 2px 10px -1px rgb(225, 53, 53);
+            transition: box-shadow 0.4s ease;
+        }
+        .button1
+        {
+            height: 32px;
+            width: 100%;
+            display: flex;
+            border-radius: 16px;
+            border: 0px;
+            text-align: center;
+            display: block;
+            margin-top: 80%;
+            transform: translatex(102px);
+            font-size: 15px;
+            margin-left: 10px;
+            background-color: rgb(218, 218, 218);
+        }
+        .eye{
+            height:25px;
+            width:26px;
+            transform: translateX(-35px);
+        }
+        .icon{
+            border: 0px;
+            border-radius: 20px;
+            background: transparent;
+        }
+        .login{
+            display: inline-block; 
+        }
+    img{
+        height: 200px;
+        width: 200px;
+        display: none;
+        transform: translate(0,50%);
+        transition: display 4s ease;
+        }
+    .img{ 
+        
+        float: right;
+        margin-right: 25%;
+        margin-top: 40px;
+        opacity: 0.9;
+        animation: scale 2s infinite;
+    }
+    @keyframes scale {
+        40%{
+            transform: scale(1);
+            transform: rotateZ(0deg)
+        } 
+        49.5%{
+            transform: scale(1.2);
+        }
+        50%{
+            transform: scale(1.3);
+        }
+
+        100%{
+            transform: scale(1);
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="img">
+        <img src="360_F_39359503_OwuPkSOhBPDVZvEBLVo3CzTEn4qjXmqm-removebg-preview.png" alt="heart" id="imag">
+        </div>
+        <div class="login-div" id="mydiv2">
+            <div class="data">
+            <div class="username">
+                 <input type="text" title="Username" placeholder="Username" class="user" id="user" value=""><br>
+            </div>
+            <div class="password">
+                <input type="password" title="Password" placeholder="Password" id="pass" value="" >
+                <button title="button" class="icon" onclick="toggle()"><img src="pngtree-vector-eye-icon-png-image_925911-removebg-preview.png" class="eye" alt="eye"></button>
+            </div>
+            <div class="submit">
+                <div class="login">
+                <button  class="button1" id="login" onclick="login()"><b>Login</b></button>
+            </div>
+           
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
